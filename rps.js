@@ -67,7 +67,7 @@ function playRound(player1, player2) {
 let player1WinCount = 0;
 let player2WinCount = 0;
 
-function playGame(player1, player2, playUntil = 5) {
+function playGame(player1, player2, playUntil) {
   let winner = playRound(player1, player2);
   if (winner === player1) {
     player1WinCount++;
@@ -81,6 +81,6 @@ function playGame(player1, player2, playUntil = 5) {
   if (player1WinCount === playUntil || player2WinCount === playUntil) {
     return [winner];
   }
-  return playGame(player1, player2);
+  return playGame(player1, player2, playUntil);
 }
-playGame(player1, player2);
+playGame(player1, player2, 5);
